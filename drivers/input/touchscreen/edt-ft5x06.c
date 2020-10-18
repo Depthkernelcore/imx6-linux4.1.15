@@ -902,8 +902,8 @@ edt_ft5x06_ts_get_parameters(struct edt_ft5x06_ts_data *tsdata)
 	if (reg_addr->reg_report_rate != NO_REGISTER)
 		tsdata->report_rate = edt_ft5x06_register_read(tsdata,
 						reg_addr->reg_report_rate);
-	tsdata->num_x = edt_ft5x06_register_read(tsdata, reg_addr->reg_num_x);
-	tsdata->num_y = edt_ft5x06_register_read(tsdata, reg_addr->reg_num_y);
+	tsdata->num_x = 800;//edt_ft5x06_register_read(tsdata, reg_addr->reg_num_x);
+	tsdata->num_y = 480;//edt_ft5x06_register_read(tsdata, reg_addr->reg_num_y);
 }
 
 static void

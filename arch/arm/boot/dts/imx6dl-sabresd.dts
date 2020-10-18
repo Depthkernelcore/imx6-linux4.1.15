@@ -57,7 +57,8 @@
         V3P3-supply = <&V3P3_reg>;
         VCOM-supply = <&VCOM_reg>;
         DISPLAY-supply = <&DISPLAY_reg>;
-        status = "okay";
+//        status = "okay";
+	status = "disabled";
 };
 
 &i2c3 {
@@ -149,4 +150,30 @@
 
 &pxp {
 	status = "okay";
+};
+
+&ft5x06_i2c3 {
+        status = "okay";
+};
+
+
+
+
+&pinctrl_usdhc3 {
+        fsl,pins = <
+                MX6QDL_PAD_SD3_CMD__SD3_CMD             0x17059
+                MX6QDL_PAD_SD3_CLK__SD3_CLK             0x10059
+                MX6QDL_PAD_SD3_DAT0__SD3_DATA0          0x17059
+                MX6QDL_PAD_SD3_DAT1__SD3_DATA1          0x17059
+                MX6QDL_PAD_SD3_DAT2__SD3_DATA2          0x17059
+                MX6QDL_PAD_SD3_DAT3__SD3_DATA3          0x17059
+                MX6QDL_PAD_SD3_DAT4__SD3_DATA4          0x17059
+                MX6QDL_PAD_SD3_DAT5__SD3_DATA5          0x17059
+//              MX6QDL_PAD_SD3_DAT6__SD3_DATA6          0x17059
+//              MX6QDL_PAD_SD3_DAT7__SD3_DATA7          0x17059
+        >;
+};
+
+&usdhc3 {
+        wp-gpios = <&gpio2 1 GPIO_ACTIVE_HIGH>;
 };
